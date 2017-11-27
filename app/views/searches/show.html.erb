@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Search:</strong>
+  <%= @search.search %>
+</p>
+
+<%= link_to 'Edit', edit_search_path(@search) %> |
+<%= link_to 'Back', searches_path %>
+
+<table>
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Tweet</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <%@twitts.collect do |tweet|%>
+      <tr>
+        <td><%= tweet.user.screen_name %></td>
+        <td><%= tweet.text %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
